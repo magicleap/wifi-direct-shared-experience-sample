@@ -28,7 +28,7 @@ After cloning this project to your local machine you should be able to open, set
 </td>
 <td valign=top>	
 
-and include the `Assets|Scenes|SampleScene` in your build, then deploy the application to your ML2 devices. Alternatively, you can just sideload the included build of the sample application [APK](\Builds\SharedExperienceSample.apk) through MLHub to your device(s) to try the sample experience, before diving into the code.
+and include the `Assets|Scenes|SampleScene` in your build, then deploy the application to your ML2 devices. Alternatively, you can just sideload the included build of the sample application [APK](/Builds/SharedExperienceSample.apk) through MLHub to your device(s) to try the sample experience, before diving into the code.
 
 </td>
 </tr>
@@ -108,7 +108,7 @@ The session host will initially receive, and need to confirm, an `Invitation to 
 <img src="Readme-Imgs/ConnectInvitation.png" width="20%">
 </p>
 
-The host device will list each peer that is connected under the `Host Service` button with a connection icon to the right. <img src="Readme-Imgs/Connected.png" width=64  align=right margin-left="4">
+The host device will list each peer that is connected under the `Host Service` button with a connection icon to the right. <img src="Readme-Imgs/Connected.PNG" width=64  align=right margin-left="4">
 
 The peer will show the connected icon on the right end of the associated Discovered service button.
 
@@ -213,5 +213,4 @@ This sample application contains the 3D model [ConceptCar 051](https://sketchfab
 
 
 # Copyright
-Copyright (c) (2023) Magic Leap, Inc. All Rights Reserved. Use of this file is governed by the Developer Agreement, located here: https://id.magicleap.com/terms/developer
-
+Copyright (c) (2023) Magic Leap, Inc. All Rights Reserved. Use of this file is governed by the Developer Agreement, located here: https://www.magicleap.com/software-license-agreement-ml2 
