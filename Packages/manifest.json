@@ -11,7 +11,7 @@
   "dependencies": {
     "com.magicleap.mrtk3": "file:MagicLeap/com.magicleap.mrtk3-1.0.0-pre.5.tgz",
     "com.magicleap.unitysdk": "1.11.0",
-    "com.microsoft.mrtk.graphicstools.unity": "file:MixedReality/com.microsoft.mrtk.graphicstools.unity-0.6.2.tgz",
+    "com.microsoft.mrtk.graphicstools.unity": "file:MixedReality/com.microsoft.mrtk.graphicstools.unity-0.5.14.tgz",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.ide.rider": "3.0.24",
     "com.unity.ide.visualstudio": "2.0.21",
