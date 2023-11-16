@@ -10,8 +10,10 @@
 
 using MixedReality.Toolkit.SpatialManipulation;
 using MixedReality.Toolkit.UX;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using static System.FormattableString;
 
 public class SharedExperienceScript : MonoBehaviour
 {
@@ -114,14 +116,14 @@ public class SharedExperienceScript : MonoBehaviour
             Vector3 deltaPosition = TargetObj.transform.position - Stage.transform.position;
             deltaPosition = Quaternion.Euler(0, -Stage.transform.rotation.eulerAngles.y, 0) * deltaPosition;
 
-            ShareCommand($"{nameof(SEvents.Move)},{deltaPosition.x.ToString()},{deltaPosition.y.ToString()},{deltaPosition.z.ToString()},");
+            ShareCommand(Invariant($"{nameof(SEvents.Move)},{deltaPosition.x},{deltaPosition.y},{deltaPosition.z},"));
 
             Quaternion eRelativeRotation = Quaternion.Euler(0, -Stage.transform.rotation.eulerAngles.y, 0) * TargetObj.transform.rotation;
 
-            ShareCommand($"{nameof(SEvents.Orientation)},{eRelativeRotation.x.ToString()},{eRelativeRotation.y.ToString()},{eRelativeRotation.z.ToString()},{eRelativeRotation.w.ToString()},");
+            ShareCommand(Invariant($"{nameof(SEvents.Orientation)},{eRelativeRotation.x},{eRelativeRotation.y},{eRelativeRotation.z},{eRelativeRotation.w},"));
 
             //Send scale, should be same in all shared worlds, no need to adjust
-            ShareCommand($"{nameof(SEvents.Scale)},{TargetObj.transform.localScale.x.ToString()},{TargetObj.transform.localScale.y.ToString()},{TargetObj.transform.localScale.z.ToString()},");
+            ShareCommand(Invariant($"{nameof(SEvents.Scale)},{TargetObj.transform.localScale.x},{TargetObj.transform.localScale.y},{TargetObj.transform.localScale.z},"));
 
         }
     }
@@ -163,9 +165,9 @@ public class SharedExperienceScript : MonoBehaviour
                 float newX;
                 float newY;
                 float newZ;
-                if (!float.TryParse(cmdStrs[1], out newX)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[2], out newY)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[3], out newZ)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[1],NumberStyles.Float, CultureInfo.InvariantCulture, out newX)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[2], NumberStyles.Float, CultureInfo.InvariantCulture, out newY)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[3], NumberStyles.Float, CultureInfo.InvariantCulture, out newZ)) parsedFailed = true;
 
                 if (cmdStrs.Length > 5)
                 {
@@ -195,10 +197,10 @@ public class SharedExperienceScript : MonoBehaviour
                 float rotY;
                 float rotZ;
                 float rotW;
-                if (!float.TryParse(cmdStrs[1], out rotX)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[2], out rotY)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[3], out rotZ)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[4], out rotW)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[1], NumberStyles.Float, CultureInfo.InvariantCulture, out rotX)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[2], NumberStyles.Float, CultureInfo.InvariantCulture, out rotY)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[3], NumberStyles.Float, CultureInfo.InvariantCulture, out rotZ)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[4], NumberStyles.Float, CultureInfo.InvariantCulture, out rotW)) parsedFailed = true;
 
                 if (cmdStrs.Length > 6)
                 {
@@ -227,9 +229,9 @@ public class SharedExperienceScript : MonoBehaviour
                 float scaleY;
                 float scaleZ;
 
-                if (!float.TryParse(cmdStrs[1], out scaleX)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[2], out scaleY)) parsedFailed = true;
-                if (!float.TryParse(cmdStrs[3], out scaleZ)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[1], NumberStyles.Float, CultureInfo.InvariantCulture, out scaleX)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[2], NumberStyles.Float, CultureInfo.InvariantCulture, out scaleY)) parsedFailed = true;
+                if (!float.TryParse(cmdStrs[3], NumberStyles.Float, CultureInfo.InvariantCulture, out scaleZ)) parsedFailed = true;
 
                 if (cmdStrs.Length > 5)
                 {
